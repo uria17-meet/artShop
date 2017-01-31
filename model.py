@@ -35,7 +35,7 @@ class Artwork(Base):
     width = Column(Integer(10))
     matirial = Column(String(60))
     price = Column(Integer(10))
-    photo = Column()
+    photo = Column(String(255))
 
 engine = create_engine('sqlite:///Database.db')
 Base.metadata.create_all(engine)
