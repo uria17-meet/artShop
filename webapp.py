@@ -15,7 +15,7 @@ def login():
 
     return render_template('login.html')
 
-
+@app.route('/main', method='GET')
 
 if __name__ == '__main__':
     app.run()
