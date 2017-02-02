@@ -15,22 +15,17 @@ class User(Base):
     email = Column(String(60))
     username = Column(String(60), unique=True)
     password = Column(String(60))
-
-
-class Artist(Base):
-	__tablename__ = 'artist'
-
-    id = Column(Integer, primary_key=True)
-    email = Column(String(60))
-    username = Column(String(60), unique=True)
-    password = Column(String(60))
-    artworks = relationship('Artwork', back_populate= 'artist')
+    artist= Column(Boolean())
+    if artist==True:
+        artworks = relationship('Artwork', back_populates='artist')
+        
+        
 
 class Artwork(Base):
     __tablename__ = 'artwork'
 
 	id = Column(Integer, primary_key=True)
-    artist = relationship('Artist', back_populate= 'artwork')
+    artist = relationship('User', back_populates='artworks')
     hight = Column(Integer(10))
     width = Column(Integer(10))
     matirial = Column(String(60))
