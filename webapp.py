@@ -10,6 +10,8 @@ session = DBSession()
 
 
 @app.route('/')
+def main_page():
+	return render_template('main_')
 @app.route('/login', methods=['GET ', 'POST'])
 def login():
 
