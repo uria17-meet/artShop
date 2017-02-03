@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Float
+from sqlalchemy import *
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship, sessionmaker
 from sqlalchemy import create_engine, func
@@ -15,21 +15,20 @@ class User(Base):
     email = Column(String(60))
     username = Column(String(60), unique=True)
     password = Column(String(60))
-    artist= Column(Boolean())
-    if artist==True:
+    artist = Column(Boolean)
+    if artist == True:
         artworks = relationship('Artwork', back_populates='artist')
-        
-        
+
 
 class Artwork(Base):
     __tablename__ = 'artwork'
 
-	id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True)
     artist = relationship('User', back_populates='artworks')
-    hight = Column(Integer(10))
-    width = Column(Integer(10))
+    hight = Column(Integer)
+    width = Column(Integer)
     matirial = Column(String(60))
-    price = Column(Integer(10))
+    price = Column(Integer)
     photo = Column(String(255))
 
 engine = create_engine('sqlite:///Database.db')

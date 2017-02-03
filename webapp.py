@@ -1,6 +1,7 @@
 from flask import *
 from model import *
 
+
 app = Flask(__name__)
 
 engine = create_engine('sqlite:///Database.db')
@@ -10,14 +11,10 @@ session = DBSession()
 
 
 @app.route('/')
-def main_page():
-	return render_template('main_')
-@app.route('/login', methods=['GET ', 'POST'])
-def login():
+def landing_page():
+    return "hello"
 
-    return render_template('login.html')
 
-@app.route('/main', method='GET')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True,)
