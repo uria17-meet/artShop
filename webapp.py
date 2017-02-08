@@ -8,6 +8,7 @@ engine = create_engine('sqlite:///Database.db')
 Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
+app.url_map.strict_slashes = False
 
 
 @app.route('/')
