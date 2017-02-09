@@ -1,62 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<!-- Required meta tags -->
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="static/styles.css">
-	</head>
-	<body>
-		<nav class="navbar navbar-toggleable-md navbar-light bg-faded nav-justified navbar-fixed-top" >
-			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#NAVI">
-			<span class="navbar-toggler-icon"></span>
-			</button>
-			<h2 id="logo">ARTSHOP</h2>
-			<div class="collapse navbar-collapse " id="NAVI">
-				<ul class="nav navbar-nav right">
-					<li class="nav-item active">
-						<a class="nav-link" href="#">Home</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Gallery</a>
-					</li>
-					<li class="nav-item">
-						<div class="btn-group">
-							<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Login
-							</button>
-							<div class="dropdown-menu">
-								<form>
-									<div class="form-group">
-										<input type="text" class="form-control" id="logusername" placeholder="Enter username">
-									</div>
-									<div class="form-group">
-										<input type="password" class="form-control" id="logpassword" placeholder="Password">
-									</div>
+{% extends "layout.html" %}
+ <head>
+ 	
+{% block title %} Landing {% endblock %}
+ </head>
 
-									<input type="submit" class="btn pull-sm-center btn-success btn-sm" value="Login">
-									
-								</div>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</nav>
-			<div id="stage">
-				<div id="stage-caption">
-					<h1 class="display-3">ARTSHOP.<br> it's just GREAT!</h1>
-					<p>Make the most of Art</p>
-					<a href="" class="btn btn-lg btn-info">Sign Up NOW!</a>
-				</div>
-			</div>
-			<footer>
-				
-			</footer>
-			<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
-		</body>
-	</html>
+{% block body %}
+<div id="stage">
+	<div id="stage-caption">
+		<h1 class="display-3">ARTSHOP.<br> it's just GREAT!</h1>
+		<p>Make the most of Art</p>
+		<a href="" class="btn btn-lg btn-info">Sign Up NOW!</a>
+	</div>
+</div>
+<div class="container" id='stage about'>
+	<h2>About</h2>
+	<p>this is ARTSHOP, and i created it because i wanted to give young artists a beggining</p>
+{% endblock %}
+</div>

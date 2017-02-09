@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="static/styles.css">
+		{% block title %} {% endblock %}
+	</head>
+	<body>
+		<nav class="navbar navbar-toggleable-md navbar-light bg-faded nav-justified navbar-fixed-top" >
+			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#NAVI">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+			<h2 id="logo">ARTSHOP</h2>
+			<div class="collapse navbar-collapse " id="NAVI">
+				<ul class="nav navbar-nav pull-sm-right">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Gallery</a>
+					</li>
+					<li class="nav-item">
+						<div class="btn-group">
+							<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Login
+							</button>
+							<div class="dropdown-menu">
+								<form>
+									<div class="form-group">
+										<input type="text" class="form-control" id="username" placeholder="Username">
+									</div>
+									<div class="form-group">
+										<input type="password" class="form-control" id="password" placeholder="Password">
+									</div>
+									<input type="submit" class="btn push-center btn-success btn-sm" value="Login">
+									
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			{% block body %} {% endblock %}
+			<footer class="footer">
+				<div class="container pull-sm-center">
+					<h4>ARTSHOP 2016</h4>
+				</div>
+				
+			</footer>
+			<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+		</body>

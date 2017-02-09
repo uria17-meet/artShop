@@ -16,15 +16,15 @@ class User(Base):
     username = Column(String(60), unique=True)
     password = Column(String(60))
     artist = Column(Boolean)
-    if artist == True:
-        artworks = relationship('Artwork', back_populates='artist')
+    artworks = relationship('Artwork', back_populates='artist')
 
 
 class Artwork(Base):
     __tablename__ = 'artwork'
 
     id = Column(Integer, primary_key=True)
-    artist = relationship('User', back_populates='artworks')
+    artist_id = Column(Integer, ForeignKey('user.id'))
+    artist = relationship('User',back_populates=('artworks'))
     hight = Column(Integer)
     width = Column(Integer)
     matirial = Column(String(60))
