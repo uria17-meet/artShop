@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block body %}
+	<div class="container-fluid" style="background-size: cover; background-image:url(https://s-media-cache-ak0.pinimg.com/originals/0e/ad/eb/0eadebe7a808c205e802b0f088b35821.jpg); position: flex; ">
+		
+		<div class="container" style="background-color: rgba(255,255,255,0.7);text-align: center;">
+			<form method="post" class="pt-4" name="sign_up" action="{{ url_for('sign_up') }}">
+				<div class="form-group my-3 mx-auto">
+					<input type="text" name="fullname" placeholder="Full ame" required="required" class="form-cotroll">
+				</div>
+				<div class="form-group my-3 mx-auto">
+					<input type="text" name="username" placeholder="User name" required="required" class="form-cotroll">
+				</div>
+				<div class="form-group my-3 mx-auto">
+					<input type="email" name="email" placeholder="E-mail" required="required" class="form-cotroll">
+				</div>
+				<div class="form-group my-3 mx-auto">
+					<input type="password" name="password" placeholder="password" required="required" class="form-cotroll">
+				</div>
+				<div class="form-group my-3 mx-auto">
+					<input type="address" name="address" placeholder="Address (optional)"  class="form-cotroll">
+				</div>
+				<fieldset class="form-group my-3 mx-auto">
+					<label class="form-check-label">Are you an artist?</label>
+					<div class="form-check">
+						<label class="form-check-label">
+							<input type="radio" class="form-check-input" name="artist" id="yes" value="1" >
+							Yep!
+						</label>
+					</div>
+					<div class="form-check">
+						<label class="form-check-label">
+							<input type="radio" class="form-check-input" name="artist" id="no" value="0" checked>
+							Nope.
+						</label>
+					</fieldset>
+					<button type="submit" class="btn btn-primary my-3 mx-auto">Submit</button>
+				</form>
+			</div>
+		</div>
+	{% endblock %}
