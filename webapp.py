@@ -48,10 +48,8 @@ def logged():
 @app.route('/sign_up', methods=['GET', 'POST'])
 def sign_up():
     print('0')
-    if request.method == 'GET':
-        return render_template('sign_up.html')
+    if request.method == 'POST':
         print('1')
-    elif request.method == 'POST':
         username = request.form['username']
         fullname = request.form['fullname']
         email = request.form['email']
@@ -63,7 +61,11 @@ def sign_up():
             session.add(newuser)
             session.commit()
             print('commit')
-            return redirect({{url_for('landing')}})
+            return redirect(url_for('landing'))
+            flash("Sign up successful, now just log in .",'success')
+    else:
+        return render_template('sign_up.html')
+        
 
 
 if __name__ == '__main__':
