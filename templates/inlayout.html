@@ -24,13 +24,13 @@
 </head>
 <body>
 	<div class="container">
-		<nav class="navbar navbar-toggleable-md navbar-light bg-black navbar-fixed-top" >
+		<nav class="navbar navbar-right navbar-toggleable-md navbar-light navbar-fixed-top" >
 			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#NAVI">
 			<span class="navbar-toggler-icon"></span>
 			</button>
 			<h2 id="logo">ARTSHOP</h2>
 			<div class="collapse navbar-collapse " id="NAVI">
-				<ul class="nav navbar-nav pl-5" role="menu">
+				<ul class="nav navbar-nav" role="menu">
 					<li class="nav-item active">
 						<a class="nav-link" href="{{ url_for('home') }}">Home</a>
 					</li>
@@ -45,10 +45,10 @@
 								</button>
 							</a>
 						</li>
-						<li class="nav-item pull-sm-right">
+						<li class="nav-item mx-4">
 							
 							{% if 'username' in session %}
-								<p>signed in as {{session['username']}} </p>
+								<p>  signed in as {{session['username']}} </p>
 							{% endif %}
 						</li>
 					</ul>

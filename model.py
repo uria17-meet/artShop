@@ -15,6 +15,7 @@ class User(Base):
     email = Column(String(60))
     username = Column(String(60), unique=True)
     password = Column(String(60))
+    phone = Column(String(60))
     artist = Column(Boolean)
     artworks = relationship('Artwork', back_populates='artist')
 

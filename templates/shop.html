@@ -1,5 +1,39 @@
 {% extends 'inlayout.html' %}
-
 {% block body %}
-
+	<div class="container">
+		
+		<div class="card-columns">
+			{% for artwork in artworks %}
+				<div class="card">
+					<img class="card-img-top img-fluid" src="{{ artwork.photo }}" alt="Card image cap">
+					<div class="card-block">
+						<h4 class="card-title">{{ artwork.name }}</h4>
+						<h2>Made by {{ artwork.artist.fullname }}</h2>
+						<p class="card-text">This art work is {{ artwork.hight }} by {{ artwork.width }} . It is made from {{ artwork.material }}</p>
+						<p>Price: {{ artwork.price }} $</p>
+						<button class="btn btn-md btn-success" data-toggle="modal" data-target="#contact">Buy</button>
+						<div class="modal fade" id="contact">
+							<div class="modal-dialog">
+								<div class="modal-content center-block">
+									<div class="modal-header">
+										
+										<h4>Contact : {{ artwork.artist.fullname }}</h4>
+									</div>
+									<div class="modal-body center-block"></div>
+									<div class="mx-4">
+										<p>Email : {{artwork.artist.email}} </p>
+										<p>Phone # : {{artwork.artist.phone}} </p>
+										<p>adress : {{artwork.artist.address}} </p>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
 {% endblock %}

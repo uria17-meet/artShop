@@ -53,8 +53,9 @@ def sign_up():
         password = request.form['password']
         address = request.form['address']
         artist = request.form['artist']
+        phone = request.form['phone']
         if session.query(User).filter_by(username=username).first() is None:
-            newuser = User(email=email, fullname=fullname, username=username,password=password, address=address, artist=artist)
+            newuser = User(email=email, fullname=fullname, username=username,password=password, address=address, artist=artist,phone=phone)
             session.add(newuser)
             session.commit()
             print('commit')
@@ -72,7 +73,7 @@ def gallery():
 def home():
     if login_session['username'] is not None:
         user = session.query(User).filter_by(username=login_session['username'])
-        return render_template('home.html')
+        return render_template('home.html',user=user)
     else:
         return redirect(url_for('landing'))
         flash("Login first",'danger')
@@ -82,7 +83,7 @@ def shop():
     if login_session['username'] is not None:
         artworks = session.query(Artwork).all()
         user = session.query(User).filter_by(username=login_session['username']).first()
-        return render_template('shop.html')
+        return render_template('shop.html',artworks=artworks ,user=user)
     else:
         return redirect(url_for('landing'))
         flash("Login first",'danger')
