@@ -33,16 +33,13 @@ def landing():
             login_session['username'] = user.username
             login_session['id'] = user.id
             print('LALALALALAL')
-            return redirect(url_for('logged'))
+            return redirect(url_for('home'))
+            flash('Login successful','success')
         else:
             flash("invalid username password combination", 'danger')
             return redirect(url_for('landing'))
 
 
-@app.route('/logged')
-def logged():
-    if login_session['username'] is not None:
-        return login_session['username']
 
 
 @app.route('/sign_up', methods=['GET', 'POST'])
@@ -66,6 +63,39 @@ def sign_up():
     else:
         return render_template('sign_up.html')
         
+@app.route('/gallery')
+def gallery():
+    artworks = session.query(Artwork).all()
+    return render_template('gallery.html', artworks=artworks)
+
+@app.route('/home')
+def home():
+    if login_session['username'] is not None:
+        user = session.query(User).filter_by(username=login_session['username'])
+        return render_template('home.html')
+    else:
+        return redirect(url_for('landing'))
+        flash("Login first",'danger')
+
+@app.route('/shop')
+def shop():
+    if login_session['username'] is not None:
+        artworks = session.query(Artwork).all()
+        user = session.query(User).filter_by(username=login_session['username']).first()
+        return render_template('shop.html')
+    else:
+        return redirect(url_for('landing'))
+        flash("Login first",'danger')
+
+@app.route('/logout')
+def logout():
+    if login_session['username'] is not None:
+        login_session.pop('username',None)
+        return redirect(url_for('landing'))
+    else:
+        return redirect(url_for('landing'))
+        flash("Login first",'danger')
+
 
 
 if __name__ == '__main__':

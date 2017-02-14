@@ -12,6 +12,10 @@ users = [
 
 ]
 
+artworks = [
+    {'name':'the TEST', 'hight': '70cm','width':'50cm','material':'oil on canvas','price':23145,'photo':'http://upload.wikimedia.org/wikipedia/commons/d/d5/Mona_Lisa_(copy,_Hermitage).jpg','artist_id':1}
+]
+
 everyone = session.query(User).all()
 for i in everyone:
     session.delete(i)
@@ -26,4 +30,16 @@ for user in users:
         username=user['username'],
         artist=user['artist'])
     session.add(newUser)
+    session.commit()
+
+for artwork in artworks:
+    newArtwork = Artwork(
+        artist_id=artwork['artist_id'],
+        name=artwork['name'],
+        hight=artwork['hight'],
+        width=artwork['width'],
+        material=artwork['material'],
+        price=artwork['price'],
+        photo=artwork['photo'])
+    session.add(newArtwork)
     session.commit()

@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="container">
+	
+<div class="card-columns">
+{% for artwork in artworks %}
+  <div class="card">
+    <img class="card-img-top img-fluid" src="{{ artwork.photo }}" alt="Card image cap">
+    <div class="card-block">
+      <h4 class="card-title">{{ artwork.name }}</h4>
+      <h2>Made by {{ artwork.artist.fullname }}</h2>
+      <p class="card-text">This art work is {{ artwork.hight }} by {{ artwork.width }} . It is made from {{ artwork.material }}</p>
+      <p>Price: {{ artwork.price }}</p>
+    </div>
+  </div>
+{% endfor %}
+
+</div>
+{% endblock %}
