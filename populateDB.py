@@ -8,12 +8,13 @@ session = DBSession()
 
 users = [
     {'fullname': 'Uria Cohen', 'address': 'Alon HaGalil', 'username': 'uriacohen',
-        'email': 'uriacohen0@gmail.com', 'password': 'ASDqwe123','artist': False,}
+        'email': 'uriacohen0@gmail.com', 'password': 'ASDqwe123', 'artist': 1, }
 
 ]
 
 artworks = [
-    {'name':'the TEST', 'hight': '70cm','width':'50cm','material':'oil on canvas','price':23145,'photo':'http://upload.wikimedia.org/wikipedia/commons/d/d5/Mona_Lisa_(copy,_Hermitage).jpg','artist_id':1}
+    {'name': 'the TEST', 'hight': '70cm', 'width': '50cm', 'material': 'oil on canvas', 'price': 23145,
+        'photo': 'http://upload.wikimedia.org/wikipedia/commons/d/d5/Mona_Lisa_(copy,_Hermitage).jpg', 'artist_id': 1}
 ]
 
 everyone = session.query(User).all()

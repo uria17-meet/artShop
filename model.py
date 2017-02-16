@@ -16,7 +16,7 @@ class User(Base):
     username = Column(String(60), unique=True)
     password = Column(String(60))
     phone = Column(String(60))
-    artist = Column(Boolean)
+    artist = Column(Integer)
     artworks = relationship('Artwork', back_populates='artist')
 
 
@@ -25,7 +25,7 @@ class Artwork(Base):
 
     id = Column(Integer, primary_key=True)
     artist_id = Column(Integer, ForeignKey('user.id'))
-    artist = relationship('User',back_populates=('artworks'))
+    artist = relationship('User', back_populates=('artworks'))
     name = Column(String(60))
     hight = Column(Integer)
     width = Column(Integer)
