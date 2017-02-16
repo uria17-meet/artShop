@@ -41,7 +41,20 @@ img{
 	height: 100%;
 	width: 100%;
 	display: flex;
-	align-items: center; 
+	align-items: center;
+
+ 
+}
+
+#stage2 {
+	background: url('http://www.magicbrushespaintparty.com/000_vig_user_files/page_unique_header_custom/94397/556202/paint.jpg') center center no-repeat;
+	background-size: cover;
+	color: white;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+
 }
 #stage-caption {
 	font-size: 1.4rem;

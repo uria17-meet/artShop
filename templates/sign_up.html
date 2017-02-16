@@ -6,9 +6,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.0/css/mdb.min.css">
 		<link rel="stylesheet" type="text/css" href="static/styles.css">
-		{% block title %}{% endblock %}
 		{% with messages = get_flashed_messages(with_categories=true) %}
 		<!-- Categories: success (green), info (blue), warning (yellow), danger (red) -->
 		{% if messages %}
@@ -29,7 +29,7 @@
 			</button>
 			<h2 id="logo">ARTSHOP</h2>
 			<div class="collapse navbar-collapse " id="NAVI">
-				<ul class="nav navbar-nav pl-5" role="menu">
+				<ul class="nav navbar-nav pl-5 mr-auto" role="menu">
 					<li class="nav-item active">
 						<a class="nav-link" href="{{ url_for('landing') }}">Home</a>
 					</li>
@@ -40,74 +40,77 @@
 			</div>
 		</nav>
 	</div>
-	<div style="background-size:cover; background-image:url(http://www.magicbrushespaintparty.com/000_vig_user_files/page_unique_header_custom/94397/556202/paint.jpg);; ">
-		<div class="container center-block" >
-			<shadow>
-			<h1>Sign Up!</h1>
-			<p>It's FREE</p>
-			</shadow>
-		</div>
+	<div id="stage">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-6">
+				<div class="col">
+					<div id="stage-caption">
+						<h1 class="display-3">Sign up now<br> it's Free!</h1>
+					</div>
+				</div>
+				<div class="col">
 					<div class="card">
 						<div class="card-block">
-							<form method="post" name="sign_up" action="{{ url_for('sign_up') }}">
-								<div class="form-group">
-									<input type="text" name="fullname" placeholder="Full name" required="required" class="form-cotroll">
-								</div>
-								<div class="form-group">
-									<input type="text" name="username" placeholder="User name" required="required" class="form-cotroll">
-								</div>
-								<div class="form-group">
-									<input type="email" name="email" placeholder="E-mail" required="required" class="form-cotroll">
-								</div>
-								<div class="form-group">
-									<input type="password" name="password" placeholder="password" required="required" class="form-cotroll">
-								</div>
-								<h5>Are you an Artist ? </h5><br>
-								<fieldset class="form-group">
-									<label id="show" class="form-check-label"><input type="radio" name="artist" value="1">Yep!</label>
-									<div class="form-check">
-										<label id="hide" class="form-check-label"><input type="radio" name="artist" value="0" checked>
-										Nope.</label>
-									</div>
-								</fieldset>
-								<button type="submit" value="Submit" name="sign_up" class="btn btn-primary">Submit</button>
+							<div class="form-header">
+								<h3><i class="fa fa-user"></i> Register:</h3>
 							</div>
-						</div>
-						<div class="col-sm-6 collapse" id="forart">
-							<div class="card">
-								<div class="card-block">
-									<div class="form-group">
-										<input type="text" name="phone" placeholder="Phone #" class="form-cotroll">
+							<form method="post" action="{{ url_for('sign_up') }}">
+								<div class="md-form">
+									<input type="text" name="fullname" class="form-control" placeholder="Full name" required>
+								</div>
+								<div class="md-form">
+									<input type="text" name="username" class="form-control" placeholder="User name" required>
+								</div>
+								<div class="md-form">
+									<input type="text" name="email" class="form-control" placeholder="Email" required>
+								</div>
+								<div class="md-form">
+									<input type="password" name="password" class="form-control" placeholder="Password" required>
+								</div>
+								<div class="md-form"><h4>Are You an artist ? :</h4></div>
+								<div class="md-form">
+									<label><input name="artist" type="radio" id="yes" value="1">Yep!</label>
+								</div>
+								<br>
+								<div class="md-form">
+									<label><input name="artist" type="radio" id="no" value="0">Nope.</label>
+								</div>
+								<br><br>
+								<div class="collapse">
+									<div class="md-form">
+										<input type="text" name="phone" class="form-control" placeholder="Phone number">
 									</div>
-									<div class="form-group">
-										<input type="text" name="address" placeholder="Address " class="form-cotroll">
+									<div class="md-form">
+										<input type="text" name="address" class="form-control" placeholder="Address">
 									</div>
 								</div>
-							</div>
+								<div class="text-center">
+									<button type="submit" class="btn btn-indigo">Sign up</button>
+								</div>
+							</form>
 						</div>
-					</form>
+					</div>
 				</div>
 			</div>
-			<footer class="footer" ">
-				<div class="container" style="text-align: center;">
-					<h5 style="color:#e8e5e3;">ARTSHOP 2016</h5>
-				</div>
-				
-			</footer>
-			<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-			<script>
-			$(document).ready(function(){
-				$("#hide").click(function(){
-					$(".collapse").collapse('hide');
-				});
-				$("#show").click(function(){
-					$("#forart").collapse('show');
-				});
+		</div>
+	</div>
+	<footer class="footer" ">
+		<div class="container" style="text-align: center;">
+			<h5 style="color:#e8e5e3;">ARTSHOP 2016</h5>
+		</div>
+	</footer>
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.0/js/mdb.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		$("#yes").click(function(){
+			$(".collapse").collapse('show');
 			});
-			</script>
-		</body>
+		$("#no").click(function(){
+			$(".collapse").collapse('hide');
+			});
+	});
+	</script>
+</body>
