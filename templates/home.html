@@ -1,6 +1,6 @@
 {% extends 'inlayout.html' %}
 {% block body %}
-	<div id="stage">
+	<div id="stage" style="	background:url('http://goldwallpapers.com/uploads/posts/wallpaper-of-paintings/wallpaper_of_paintings_007.jpg')center center no-repeat;">
 		<div id="stage-caption">
 			<h1 class="display-3">ARTSHOP.<br> it's just GREAT!</h1>
 			<p>Make the most of Art</p>
@@ -8,25 +8,23 @@
 	</div>
 	<br>
 	<div class="container">
-		
-		<div class="container-fluid" style="text-align: center; padding: 4rem;">
+		<div style="text-align: center; padding: 4rem;">
 			<h2>About</h2>
 			<p>This is ARTSHOP, and i created it because i wanted to give young artists a beggining</p>
 			<span class="glyphicon glyphicon-info-sign"></span>
 		</div>
 		<br>
-		<div class="container-fluid" style="text-align: center; padding: 4rem;; background-color: lightblue;">
+		<div style="text-align: center; padding: 4rem;; background-color: lightblue;">
 			<h2>The Concept</h2>
 			<p>bla bla bla</p>
 			<span class="glyphicon glyphicon-picture"></span>
 		</div>
 		<br>
-		<div class="container-fluid" style="text-align: center; padding: 4rem;">
+		<div style="text-align: center; padding: 4rem;">
 			<h2>The Creator</h2>
 			<p>iiimmmm blablablablalb and mor blablalb</p>
 			<span class="glyphicon glyphicon-user"></span>
 		</div>
-		<br>
 		<div class="container-fluid" style="text-align: center; padding: 4rem;">
 			<p>Delete acount :</p>
 			<a href=" {{url_for('deleteacount')}} ">
@@ -35,4 +33,5 @@
 		</div>
 		<br>
 	</div>
+		
 {% endblock %}

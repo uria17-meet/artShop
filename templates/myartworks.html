@@ -2,8 +2,8 @@
 {% block body %}
 
 	<div class="container">
-		<div class="card text-center">
-		<button type="submit" class="btn btn-success"><a href="{{ url_for('addartwork') }}"> Add an art work</a></button>
+		<div class="text-center">
+		<a href="{{ url_for('addartwork') }}"><button type="submit" class="btn btn-success"> Add an art work</button></a>
 		</div>		
 		<div class="card-columns">
 			{% for artwork in artworks %}
