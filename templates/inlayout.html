@@ -8,7 +8,7 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.0/css/mdb.min.css">
-		<link rel="stylesheet" type="text/css" href="static/styles.css">
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css')}}">
 		{% block title %}{% endblock %}
 		{% with messages = get_flashed_messages(with_categories=true) %}
 		<!-- Categories: success (green), info (blue), warning (yellow), danger (red) -->
@@ -23,15 +23,15 @@
 	{% endwith %}
 </head>
 <body>
-	<div class="container">
+
 		<nav class="navbar navbar-right navbar-toggleable-md navbar-light navbar-fixed-top" >
 			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#NAVI">
 			<span class="navbar-toggler-icon"></span>
 			</button>
 			<h2 id="logo"> ARTSHOP </h2>
 			<div class="collapse navbar-collapse " id="NAVI">
-				<ul class="nav navbar-nav mr-auto" role="menu">
-					<li class="nav-item active">
+				<ul class="navbar-nav mr-auto" role="menu">
+					<li class="nav-item">
 						<a class="nav-link" href="{{ url_for('home') }}">Home</a>
 					</li>
 					<li class="nav-item">
@@ -60,7 +60,7 @@
 				</ul>
 			</div>
 		</nav>
-	</div>
+
 	{% block body %} {% endblock %}
 	<footer class="footer" ">
 		<div class="container" style="text-align: center;">

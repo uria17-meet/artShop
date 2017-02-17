@@ -3,7 +3,7 @@
 
 	<div class="container">
 		<div class="card text-center">
-		<button type="submit" class="btn btn-success">Add an art work</button>
+		<button type="submit" class="btn btn-success"><a href="{{ url_for('addartwork') }}"> Add an art work</a></button>
 		</div>		
 		<div class="card-columns">
 			{% for artwork in artworks %}
@@ -12,7 +12,7 @@
 					<div class="card-block">
 						<h4 class="card-title">{{ artwork.name }}</h4>
 						<h2>Made by {{ artwork.artist.fullname }}</h2>
-						<p class="card-text">This art work is {{ artwork.hight }} by {{ artwork.width }} . It is made from {{ artwork.material }}</p>
+						<p class="card-text">This art work is {{ artwork.height }} by {{ artwork.width }} . It is made from {{ artwork.material }}</p>
 						<p>Price: {{ artwork.price }} $</p>
 						<a href=" {{ url_for('deleteartwork',id = artwork.id )}} "><button class="btn btn-danger btn-sm">Delete</button></a>
 					</div>

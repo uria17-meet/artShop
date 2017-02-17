@@ -23,39 +23,19 @@ img{
 	max-width: 100%;
 }
 
-.blockquote {
-	font-size: 1.6rem;
-	color: #333;
-	border: none;
-	padding: auto;
-}
-.blockquote-footer {
-	margin: 1rem 0 0 ;
-
-}
 
 #stage {
-	background: url('http://sonomasun.com/wp-content/uploads/2016/08/Is-Marilyn-a-Good-Artist-ftr.jpg') center center no-repeat;
+
+	background: center center no-repeat;	
 	background-size: cover;
 	color: white;
 	height: 100%;
 	width: 100%;
 	display: flex;
 	align-items: center;
-
- 
 }
 
-#stage2 {
-	background: url('http://www.magicbrushespaintparty.com/000_vig_user_files/page_unique_header_custom/94397/556202/paint.jpg') center center no-repeat;
-	background-size: cover;
-	color: white;
-	height: 100%;
-	width: 100%;
-	display: flex;
-	align-items: center;
 
-}
 #stage-caption {
 	font-size: 1.4rem;
 	font-weight: 200;
@@ -79,10 +59,10 @@ form {
 	font-family: artlogo;
 	src:url(amtrash.ttf);
 }
+
 #logo {
 	font-family: artlogo;
 	margin: 0px 70px 0px 0px;
 	font-size: 70px
-
-
 }
+

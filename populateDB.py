@@ -13,8 +13,8 @@ users = [
 ]
 
 artworks = [
-    {'name': 'the TEST', 'hight': '70cm', 'width': '50cm', 'material': 'oil on canvas', 'price': 23145,
-        'photo': 'http://upload.wikimedia.org/wikipedia/commons/d/d5/Mona_Lisa_(copy,_Hermitage).jpg', 'artist_id': 1}
+    {'name': 'the TEST', 'height': '70cm', 'width': '50cm', 'material': 'oil on canvas', 'price': 23145,
+        'photo': 'http://upload.wikimedia.org/wikipedia/commons/d/d5/Mona_Lisa_(copy,_Hermitage).jpg', 'artist_id': 1,'phone':'0544911263'}
 ]
 
 everyone = session.query(User).all()
@@ -37,7 +37,7 @@ for artwork in artworks:
     newArtwork = Artwork(
         artist_id=artwork['artist_id'],
         name=artwork['name'],
-        hight=artwork['hight'],
+        height=artwork['height'],
         width=artwork['width'],
         material=artwork['material'],
         price=artwork['price'],

@@ -27,11 +27,14 @@ class Artwork(Base):
     artist_id = Column(Integer, ForeignKey('user.id'))
     artist = relationship('User', back_populates=('artworks'))
     name = Column(String(60))
-    hight = Column(Integer)
+    height = Column(Integer)
     width = Column(Integer)
     material = Column(String(60))
     price = Column(Integer)
     photo = Column(String(255))
+
+    def set_photo(self, photo):
+        self.photo = 'static/art_photos/'+ str(photo)
 
 engine = create_engine('sqlite:///Database.db')
 Base.metadata.create_all(engine)
