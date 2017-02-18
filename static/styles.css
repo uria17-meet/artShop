@@ -62,8 +62,9 @@ form {
 	font-size: 70px;
 }
 
-@media only screen and (max-width: 500px) {
-#qoute1{
-	font-size: 50%;
-}
+@media only screen and (max-width: 600px) {
+	#quote1{
+		font-size: 36px;
+	}
+
 }
