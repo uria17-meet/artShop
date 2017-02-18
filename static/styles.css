@@ -61,7 +61,10 @@ form {
 	margin: 0px 70px 0px 0px;
 	font-size: 70px;
 }
-
+nav {
+	margin: 0 auto;
+	padding-bottom: 1rem auto;
+}
 @media only screen and (min-width: 600px) {
 	#quote1{
 		font-size: 50px;
