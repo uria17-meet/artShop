@@ -59,6 +59,11 @@ form {
 #logo {
 	font-family: artlogo;
 	margin: 0px 70px 0px 0px;
-	font-size: 70px
+	font-size: 70px;
 }
 
+@media only screen and (max-width: 500px) {
+#qoute1{
+	font-size: 30px;
+}
+}
