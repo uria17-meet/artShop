@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 app.secret_key = 'meet_is_so_cool'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-engine = create_engine('sqlite:///Database.db')
+engine = create_engine('postgres://yvzbzplexyqilh:286c9c81f55fb53c45301e9efd42f97b5249278ea8ac38528f1bfe411a557179@ec2-184-72-249-88.compute-1.amazonaws.com:5432/deluv9sufc0caq')
 Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
