@@ -35,9 +35,9 @@ img{
 #stage-caption {
 	font-size: 1.4rem;
 	font-weight: 200;
-	max-width: 60rem;
-	margin: 30px auto;
-	align-items: center;
+	max-width: 90%;
+	margin: 20px auto;
+	align-items : center;
 
 }
 
@@ -64,6 +64,6 @@ form {
 
 @media only screen and (max-width: 500px) {
 #qoute1{
-	font-size: 30px;
+	font-size: 50%;
 }
 }
